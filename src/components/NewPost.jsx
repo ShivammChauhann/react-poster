@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import classes from "./NewPost.module.css";
 
-function NewPost({ onCancel }) {
+function NewPost({ onCancel, onAddPost }) {
   const [enteredBody, setEnteredBody] = useState("");
   const [enteredAuthor, setEnteredAuthor] = useState("");
 
@@ -21,7 +21,7 @@ function NewPost({ onCancel }) {
       body: enteredBody,
       author: enteredAuthor,
     };
-    console.log(postData);
+    onAddPost(postData);
     onCancel();
   }
 
@@ -47,6 +47,7 @@ function NewPost({ onCancel }) {
 
 NewPost.propTypes = {
   onCancel: PropTypes.func,
+  onAddPost: PropTypes.func,
 };
 
 export default NewPost;
