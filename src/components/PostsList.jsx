@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
 import Post from "./Post";
 import classes from "./PostsList.module.css";
@@ -54,10 +53,5 @@ function PostsList() {
     </>
   );
 }
-
-PostsList.propTypes = {
-  isPosting: PropTypes.bool,
-  onStopPosting: PropTypes.func,
-};
 
 export default PostsList;
